@@ -1,0 +1,20 @@
+{
+  "products": [{
+    "item": { "type": 1, "ref": "Product"},
+    "amount": 0
+  }],
+  "user":
+}
+
+{
+  "products": [
+    {
+      "item": 342567835767264567,
+      "amount": 2
+    },
+    {
+      "item": 68756457458,
+      "amount": 1
+    }
+  ]
+}
