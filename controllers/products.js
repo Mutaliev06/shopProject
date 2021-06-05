@@ -31,8 +31,7 @@ class productsController {
         title: req.body.title,
         category: req.body.category,
         brand: req.body.brand,
-        price: req.body.price,
-        amount: req.body.amount
+        price: req.body.price
       })
       await products.save()
       res.json(products)
