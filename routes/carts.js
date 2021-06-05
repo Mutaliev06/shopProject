@@ -1,10 +1,12 @@
 const { Router } = require ('express');
-const commentController = require("../controllers/comments")
+const cartController = require("../controllers/carts")
 const router = Router()
 
-router.post("/cart/:id/product")
+router.post("/cart/:id/product", cartController.cartProductPost)
 
-router.delete("/cart/:id/product")
+router.delete("/cart/:id/product", cartController.cartDelete)
+
+module.exports = router;
 
 /*
 
