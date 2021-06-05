@@ -1,19 +1,18 @@
 const { Router } = require ('express');
-const productsController = require("../controllers/products")
+const productController = require("../controllers/products")
 const router = Router()
 
-router.get("/products", productsController.getProducts)
-router.get("/categories/:id/products", productsController.getProductsByCategory)
-router.get("/brands/:id/products", productsController.getProductByBrand)
+router.get("/products", productController.getProducts)
+router.get("/categories/:id/products", productController.getProductsByCategory)
+router.get("/brands/:id/products", productController.getProductByBrand)
 
-router.post("/products", productsController.createProduct)
+router.post("/products", productController.createProduct)
 
-router.delete("/product/:id", productsController.deleteProduct)
+router.delete("/product/:id", productController.deleteProduct)
 
-router.patch("/products/:id", productsController.updateProduct)
+router.patch("/products/:id", productController.updateProduct)
 
-module.exports = router
-
+module.exports = router;
 /*
 
 GET/products - пользователь может смотреть весь список товаров;
