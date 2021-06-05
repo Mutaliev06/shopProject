@@ -1,17 +1,18 @@
 const { Router } = require ('express');
-const commentController = require("../controllers/comments")
+const productsController = require("../controllers/products")
 const router = Router()
 
-router.get("/products")
-router.get("/categories/:id/products")
-router.get("/brands/:id/products")
+router.get("/products", productsController.getProducts)
+router.get("/categories/:id/products", productsController.getProductsByCategory)
+router.get("/brands/:id/products", productsController.getProductByBrand)
 
-router.post("/products")
+router.post("/products", productsController.createProduct)
 
-router.delete("/product/:id")
+router.delete("/product/:id", productsController.deleteProduct)
 
-router.patch("/products/:id")
+router.patch("/products/:id", productsController.updateProduct)
 
+module.exports = router
 
 /*
 
