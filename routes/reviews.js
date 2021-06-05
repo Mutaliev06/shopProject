@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/product/:id/reviews', reviewController.getReviewId)
 
-router.post('//product/:id/reviews', reviewController.postReviewId)
+router.post('/product/:id/reviews', reviewController.postReviewId)
 
 router.delete('/reviews/:id', reviewController.deleteReview)
 
