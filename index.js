@@ -5,6 +5,7 @@ const { url, port } = require('./config/index')
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(router)
 
 async function start () {
     try {
