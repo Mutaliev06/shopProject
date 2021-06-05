@@ -7,4 +7,3 @@ router.get('/categories')
 router.post('/categories')
 
 router.delete('/categories/:id')
-
