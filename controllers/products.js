@@ -3,7 +3,7 @@ const Products = require("../models/Product")
 class productsController {
   async getProducts(req, res) {
     try {
-      const products = await Products.find({}).lean()
+      const products = await Products.find({})
       res.json(products)
     } catch (e) {
       res.json(e.message)
@@ -11,7 +11,7 @@ class productsController {
   }
   async getProductsByCategory(req, res) {
     try {
-      const products = await Products.findById({ category: req.params.id }).lean()
+      const products = await Products.find({ category: req.params.id })
       res.json(products)
     } catch (e) {
       res.json(e.message)
@@ -19,7 +19,7 @@ class productsController {
   }
   async getProductByBrand(req, res) {
     try {
-      const products = await Products.findById({ brand: req.params.id }).lean()
+      const products = await Products.find({ brand: req.params.id })
       res.json(products)
     } catch (e) {
       res.json(e.message)
@@ -41,7 +41,7 @@ class productsController {
   }
   async deleteProduct(req, res) {
     try {
-      const products = await Products.findByIdAndDelete(req.body.id).lean()
+      const products = await Products.findByIdAndDelete(req.body.id)
       res.json(products)
     } catch (e) {
       res.json(e.message)
@@ -51,7 +51,7 @@ class productsController {
     try {
       const id = req.params.id
       const { title, category, brand, price, amount } = req.body
-      const product = await Products.findByIdAndUpdate( id, {title, category, brand, price, amount}, {new:true}).lean()
+      const product = await Products.findByIdAndUpdate( id, {title, category, brand, price, amount}, {new:true})
       res.json(product)
     } catch (e) {
       res.json(e.message)

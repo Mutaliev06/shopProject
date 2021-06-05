@@ -5,7 +5,7 @@ class brandsController {
 
   async postBrands(req, res) {
     try {
-      const brands = new Brands({ name: req.body.name}).lean()
+      const brands = new Brands({ name: req.body.name})
       await brands.save()
       res.json(brands)
     }catch (e) {

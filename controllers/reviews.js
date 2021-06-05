@@ -28,7 +28,7 @@ class reviewController {
 
     async deleteReview(req, res) {
         try {
-            const review = await Reviews.findByIdAndDelete(req.params.id).lean()
+            const review = await Reviews.findByIdAndDelete(req.params.id)
             res.json(review)
         } catch (e) {
             res.json(e.message)
