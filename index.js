@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const { url, port } = require('./config/index')
+const router = require("./routes/index")
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
