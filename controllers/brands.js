@@ -2,14 +2,6 @@ const Brands = require('../models/Brand');
 
 class brandsController {
 
-  async getBrandsByProduct(req, res) {
-    try {
-      const brands = await Brands.findById({product: req.params.id}).lean()
-      res.json(brands)
-    } catch (e) {
-      console.log(e.message)
-    }
-  }
 
   async postBrands(req, res) {
     try {

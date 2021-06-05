@@ -2,9 +2,8 @@ const { Router } = require ('express');
 const brandsController = require("../controllers/brands")
 const router = Router()
 
-router.get('/brands/:id/products')
 
-router.get('/brands')
+router.post('/brands')
 
 router.delete('/brands/:id')
 

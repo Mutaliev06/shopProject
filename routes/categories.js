@@ -4,8 +4,6 @@ const router = Router()
 
 router.get('/categories')
 
-router.get('/categories/:id/product')
-
 router.post('/categories')
 
 router.delete('/categories/:id')
