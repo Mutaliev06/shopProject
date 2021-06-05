@@ -43,3 +43,5 @@ class categoriesController {
   }
 
 }
+
+module.exports = new categoriesController()
