@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "mongoose": "^5.12.12"
   },
   "devDependencies": {

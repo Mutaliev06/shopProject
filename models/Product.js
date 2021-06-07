@@ -5,6 +5,7 @@ const Product = mongoose.Schema({
   category: { type: mongoose.Types.ObjectId, ref: "Category"},
   brand: { type: mongoose.Types.ObjectId, ref: "Brand"},
   price: Number,
+  pathToView: String,
   createdAt: Date,
   updatedAt: Date
 })

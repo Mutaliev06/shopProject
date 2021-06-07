@@ -1,6 +1,8 @@
 const { Router } = require ('express');
 const productController = require("../controllers/products")
 const router = Router()
+const path = require("path")
+
 
 router.get("/products", productController.getProducts)
 router.get("/categories/:id/products", productController.getProductsByCategory)
