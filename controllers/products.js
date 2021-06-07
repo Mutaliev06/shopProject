@@ -1,4 +1,5 @@
 const Products = require("../models/Product")
+const path = require("path")
 
 class productsController {
   async getProducts(req, res) {
@@ -26,15 +27,31 @@ class productsController {
     }
   }
   async createProduct(req, res)  {
+    const image = req.files.file
+    const newFileName = `./images/${Math.random() * 10000}${path.extname(image.name)}`
+    console.log(req.files)
+
     try {
       const products = new Products({
         title: req.body.title,
         category: req.body.category,
+        pathToView: newFileName,
         brand: req.body.brand,
         price: req.body.price
       })
       await products.save()
       res.json(products)
+    } catch (e) {
+      res.json(e.message)
+    }
+    try {
+        await image.mv(newFileName, (err) => {
+          if (err) {
+            console.log("error")
+          } else {
+            res.json("файл загружен")
+          }
+        })
     } catch (e) {
       res.json(e.message)
     }
@@ -57,6 +74,7 @@ class productsController {
       res.json(e.message)
     }
   }
+
 }
 
 module.exports = new productsController()
